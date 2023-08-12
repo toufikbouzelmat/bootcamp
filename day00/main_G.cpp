@@ -9,39 +9,28 @@
 
 using namespace std;
 
+int ft(int m,int nbr)
+{
+    map<int, int>tab;
+    for (size_t i = 0; i < nbr; i++)
+    {
+        int j;
+        cin>> j;
+        if (tab[m - j])
+        {
+            cout << tab[m - j] << " " << i + 1 << endl;
+            return 0;
+        }
+        tab[j] = i+1;
+    }
+    cout << "IMPOSSIBLE\n";
+    return 0;
+}
+
 int main()
 {
-    int n_of_array;
-    int somme;
-    int n;
-    vector<int>tab;
-
-    cin >> n_of_array;
-    cin >> somme;
-    int i = 1;
-    while (i <= n_of_array)
-    {
-        cin >> n;
-        tab.push_back(n);
-        i++;
-    }
-
-    // int res = 0;
-    // // for (int i = 1; i < n_of_array; i++)
-    // // {
-        
-    // //     for (int j = 2; j < n_of_array; j++)
-    // //     {
-    // //         res = tab[i] + tab[j];
-    // //         if (res == somme)
-    // //         {
-    // //             cout << i << ' ' << j << endl;
-    // //             return 0;
-    // //         }
-    // //     }
-        
-    // // }
-    
-    
-    
+    int nbr, m;
+    cin >> nbr;
+    cin >> m;
+    ft(m,nbr);
 }
